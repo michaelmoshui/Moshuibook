@@ -1,0 +1,44 @@
+.register-input-wrap {
+  width: 100% !important;
+}
+
+.register-input-wrap input {
+  background-color: var(--bg-secondary);
+}
+
+.input-error-message-register {
+  position: absolute;
+  left: -275px;
+  text-align: right;
+  padding-right: 16px;
+}
+
+.input-error-message-register-lastName {
+  position: absolute;
+  right: -275px;
+  padding-left: 16px;
+}
+
+.register-input-wrap .error-arrow-bottom {
+  transform: translateY(1px);
+}
+
+.error-arrow-right {
+  border-right: 10px solid var(--error-color);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid transparent;
+  position: absolute;
+  left: -20px;
+  top: 10px;
+}
+
+.error-arrow-left {
+  border-right: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid var(--error-color);
+  position: absolute;
+  right: -20px;
+  top: 10px;
+}

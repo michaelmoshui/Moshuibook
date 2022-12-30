@@ -1,0 +1,289 @@
+/* Login */
+
+.login {
+  background-color: var(--bg-secondary);
+  color: var(--color-primary);
+  text-align: center;
+  height: 78vh;
+}
+
+.login-title {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+/* margin auto aligns element horizontally center */
+
+.login-title span {
+  font-size: 20px;
+}
+
+.login-fields {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: var(--bg-primary);
+  box-shadow: 0 1px 2px var(--shadow-1);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 10px auto;
+  height: fit-content;
+  width: 350px;
+}
+
+.login-fields button {
+  width: 100%;
+  height: 50px;
+  font-size: 17px;
+  font-weight: 700;
+  user-select: none;
+}
+
+.forgot-password {
+  color: var(--blue-color);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.login-line-splitter {
+  width: 100%;
+  height: 1px;
+  background-color: var(--bg-third);
+}
+
+.create-page-link {
+  font-size: 15px;
+}
+
+.sign-up-btn {
+  background: var(--green-color);
+  font-weight: 600 !important;
+  width: 70% !important;
+  font-size: 17px !important;
+  margin-bottom: 10px;
+}
+
+/* Register */
+
+.register-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.register {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--bg-primary);
+  box-shadow: 0 1px 2px var(--shadow-1);
+  border-radius: 10px;
+  padding: 15px;
+  width: 350px;
+  height: fit-content;
+  color: var(--color-primary);
+}
+
+.register-header {
+  position: relative; /* allows for children element to be positioned according to THIS element instead of body */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--bg-third);
+}
+
+.register-header i {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+.register-header span:first-of-type {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.register-header span:last-of-type {
+  font-size: 15px;
+  color: var(--color-secondary);
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 7px;
+}
+
+.register-line {
+  padding: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.register-col {
+  position: relative;
+  align-self: flex-start;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+.register-col-header {
+  font-size: 15px;
+  margin-bottom: 8px;
+  margin-top: 5px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: var(--color-secondary0);
+}
+
+.register-grid {
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  height: 35px;
+}
+
+.register-grid select {
+  width: 90px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: var(--color-primary);
+  background-color: var(--bg-primary);
+  cursor: pointer;
+}
+
+.register-grid label {
+  width: 90px;
+  border: 1px solid var(--color-secondary);
+  border-radius: 5px;
+  font-size: 16px;
+  color: var(--color-primary);
+  background-color: var(--bg-primary);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 16px;
+}
+
+.register-info {
+  text-align: center;
+  margin: 10px auto 15px;
+  font-size: 12px;
+  color: var(--color-secondary);
+}
+
+/* birthday and gender selection error */
+.gender-selection-error {
+  top: 10px;
+}
+
+.birthday-selection-error {
+  top: 10px;
+}
+
+/* error and success message */
+.error-text {
+  color: var(--error-color);
+}
+
+.success-text {
+  color: var(--green-color);
+}
+
+/* Footer */
+.login-footer {
+  height: 22vh;
+  background-color: var(--bg-primary);
+  padding: 1rem;
+}
+
+.login-footer-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 15px;
+  padding: 10px;
+}
+
+.footer-line-splitter {
+  width: 100%;
+  height: 1px;
+  background-color: var(--bg-third);
+}
+
+/* For bigger screens >= 850px */
+@media (min-width: 960px) {
+  .login {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+  }
+  .login-title {
+    margin: 0;
+    width: 400px;
+  }
+  .login-title span {
+    font-size: 24px;
+  }
+  .login-fields {
+    width: 400px;
+  }
+  .input-wrap {
+    width: 360px;
+  }
+  .register {
+    width: 600px;
+  }
+  .register-line {
+    display: flex;
+    flex-direction: row;
+  }
+  .register-grid {
+    gap: 15px;
+    height: 50px;
+  }
+  .register-grid select {
+    width: 150px;
+    font-size: 20px;
+    padding: 10px;
+  }
+  .register-grid label {
+    width: 150px;
+    font-size: 20px;
+  }
+}
+
+/* For bigger screens >= 1600px */
+@media (min-width: 1600px) {
+  .gender-selection-error {
+    text-align: right;
+    padding-right: 16px !important;
+    position: absolute !important;
+    left: -300px !important;
+    top: 30px;
+    width: 300px !important;
+  }
+  .birthday-selection-error {
+    padding-left: 16px !important;
+    position: absolute !important;
+    right: -300px !important;
+    top: 30px;
+    width: 300px !important;
+  }
+}
