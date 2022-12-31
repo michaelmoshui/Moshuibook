@@ -29,7 +29,6 @@ exports.register = async (req, res) => {
     d = new Date();
     num = Math.floor(d.getTime() * Math.random()).toString();
     username = firstName + lastName + num.slice(num.length - 2, num.length);
-    console.log(await User.findOne({ username: username }));
     while (await User.findOne({ username: username })) {
       num = Math.floor(d.getTime() * Math.random()).toString();
       username = firstName + lastName + num.slice(num.length - 2, num.length);

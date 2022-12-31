@@ -5,6 +5,7 @@ const { OAuth2 } = google.auth;
 const oauth_link = "https://developers.google.com/oauthplayground";
 
 const { EMAIL, MAILING_ID, MAILING_REFRESH, MAILING_SECRET } = process.env;
+console.log(MAILING_REFRESH);
 
 const auth = new OAuth2(
   MAILING_ID,

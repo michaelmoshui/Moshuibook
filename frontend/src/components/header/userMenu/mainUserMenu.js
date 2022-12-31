@@ -1,5 +1,20 @@
-import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 export default function MainUserMenu(props) {
+  const navigate = useNavigate();
+  //logout function
+  const dispatch = useDispatch();
+  const logoutSubmit = async () => {
+    try {
+      dispatch({ type: "logout", payload: null });
+      Cookies.set("user", null);
+      navigate("/");
+    } catch (error) {
+      navigate("/");
+    }
+  };
+
   return (
     <div>
       <Link to="/profile" className="mmenu-header hover3">
@@ -64,7 +79,12 @@ export default function MainUserMenu(props) {
           <i className="right_icon"></i>
         </div>
       </div>
-      <div className="mmenu-item hover3">
+      <div
+        className="mmenu-item hover3"
+        onClick={() => {
+          logoutSubmit();
+        }}
+      >
         <div className="small-circle">
           <i className="logout_filled_icon" />
         </div>

@@ -1,0 +1,101 @@
+.left-home {
+  position: fixed;
+  margin-top: 50px;
+  left: 6px;
+  max-height: 100vh;
+  width: 300px;
+  overflow-y: auto; /* overflow-y allows for the scrolling! */
+  color: var(--color-primary);
+  padding: 15px 0 60px;
+}
+
+.left-link {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.left-link img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 11px;
+  vertical-align: -0.25em;
+}
+
+.left-link span {
+  margin-bottom: 4px;
+  margin-left: 3px;
+}
+
+.col-2 {
+  font-size: 12px;
+  color: var(--blue-color);
+}
+
+.rotate180 {
+  transform: rotate(180deg);
+}
+
+.splitter {
+  height: 1.3px;
+  background-color: var(--divider);
+  margin: 9px 2px 0 12px;
+}
+
+.shortcut {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shortcut-header {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-secondary);
+  padding: 13px 10px 11px 10px;
+}
+
+.edit-shortcut {
+  font-size: 14px;
+  color: var(--blue-color);
+  display: none;
+  cursor: pointer;
+}
+
+.shortcut:hover .edit-shortcut {
+  display: block;
+}
+
+.shortcut-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.shortcut-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.shortcut-item img {
+  height: 36px;
+  width: 36px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.shortcut-item span {
+  margin-bottom: 10px;
+}

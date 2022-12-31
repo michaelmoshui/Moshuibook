@@ -1,0 +1,64 @@
+.right-home {
+  position: fixed;
+  margin-top: 50px;
+  right: 10px;
+  max-height: 80.7vh;
+  width: 300px;
+  color: var(--color-primary);
+  padding: 15px 0 60px;
+}
+
+.sponsor-title {
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.splitter1 {
+  width: 100%;
+  height: 1.3px;
+  background: var(--divider);
+  margin: 12px 5px 0 0;
+}
+
+.contact-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0 15px 0;
+  align-items: center;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.contact-circle {
+  height: 33px;
+  width: 33px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.contact-item {
+  cursor: pointer;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.contact-item img {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+}
+
+.contact-item span {
+  font-weight: 700;
+  font-size: 18px;
+}

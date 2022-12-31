@@ -4,7 +4,6 @@ export default function useClickOutside(ref, func) {
   useEffect(() => {
     const listener = (e) => {
       // e.target is the div that was clicked
-      console.log(ref.current);
       if (!ref.current || ref.current.contains(e.target)) {
         // if the element does not exist or you are clicking ON the element...don't do anything
         return;

@@ -103,10 +103,10 @@ export default function Header() {
           ref={allMenuRef}
         >
           <div
+            className="click-button"
             onClick={() => {
               setAllMenuVisible(!allMenuVisible);
             }}
-            style={{ height: "20px" }}
           >
             <Menu />
           </div>
@@ -129,16 +129,14 @@ export default function Header() {
           ref={userMenuRef}
         >
           <div
+            className="click-button"
             onClick={() => {
               setUserMenuVisible(!userMenuVisible);
             }}
-            style={{ height: "20px" }}
           >
             <ArrowDown />
           </div>
-          {userMenuVisible && (
-            <UserMenu user={user} setUserMenuVisible={setUserMenuVisible} />
-          )}
+          {userMenuVisible && <UserMenu user={user} />}
         </div>
       </div>
     </header>
