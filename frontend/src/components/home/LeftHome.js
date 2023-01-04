@@ -7,15 +7,14 @@ import { ArrowDown1 } from "../../svg";
 import { useState } from "react";
 import Shortcut from "./Shortcut";
 
-export default function LeftHome() {
+export default function LeftHome({ user }) {
   // show more
   const [more, setMore] = useState(false);
 
-  const { user } = useSelector((user) => ({ ...user }));
   return (
     <div className="left-home scrollbar">
       <Link to="/profile">
-        <div className="left-link hover1">
+        <div className="left-link hover2">
           <img src={user?.picture}></img>
           <span>
             {user?.firstName} {user?.lastName}
@@ -34,7 +33,7 @@ export default function LeftHome() {
         );
       })}
       <div
-        className="left-link hover1"
+        className="left-link hover2"
         onClick={() => {
           setMore(!more);
         }}

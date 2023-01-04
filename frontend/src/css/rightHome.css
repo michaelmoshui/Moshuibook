@@ -1,11 +1,11 @@
 .right-home {
-  position: fixed;
   margin-top: 50px;
-  right: 10px;
+  margin-right: 10px;
   max-height: 80.7vh;
-  width: 300px;
+  width: 15vw;
   color: var(--color-primary);
   padding: 15px 0 60px;
+  justify-self: right;
 }
 
 .sponsor-title {
@@ -42,7 +42,7 @@
 
 .contact-icons {
   display: flex;
-  gap: 10px;
+  gap: 8px;
 }
 
 .contact-item {

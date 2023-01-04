@@ -1,6 +1,6 @@
 export default function LeftLink(props) {
   return (
-    <div className="left-link hover1">
+    <div className="left-link hover2">
       <img src={`../../../left/${props.image}.png`} alt="" />
       {props.notification !== undefined ? (
         <div className="col">

@@ -7,7 +7,7 @@ header {
   width: 100%;
   box-shadow: 1px 8px 15px -7px var(--shadow-2);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, auto);
   color: var(--color-primary);
 }
 

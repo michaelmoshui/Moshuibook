@@ -20,10 +20,8 @@ import AllMenu from "./allMenu";
 import useClickOutside from "../../helper/clickOutside";
 import UserMenu from "./userMenu/userMenu";
 
-export default function Header() {
+export default function Header({ user }) {
   const color = "#65676b";
-
-  const { user } = useSelector((user) => ({ ...user })); // get everything from "user" in redux store
 
   // getting rid of search bar
   const [search, setSearch] = useState(false);

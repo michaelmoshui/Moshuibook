@@ -15,13 +15,13 @@ export default function RightHome() {
         <div className="contact-header">
           <span className="contact-title">Contacts</span>
           <div className="contact-icons">
-            <div className="contact-circle hover1">
+            <div className="contact-circle hover3">
               <NewRoom color={color} />
             </div>
-            <div className="contact-circle hover1">
+            <div className="contact-circle hover3">
               <Search color={color} />
             </div>
-            <div className="contact-circle hover1">
+            <div className="contact-circle hover3">
               <Dots color={color} />
             </div>
           </div>
