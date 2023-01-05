@@ -10,6 +10,9 @@ const userReducer = createReducer(
       })
       .addCase("logout", (state, action) => {
         return action.payload;
+      })
+      .addCase("verify", (state, action) => {
+        return { ...state, verified: action.payload };
       });
   }
 );

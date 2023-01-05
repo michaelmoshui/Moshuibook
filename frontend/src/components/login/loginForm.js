@@ -26,9 +26,9 @@ export default function LoginForm(props) {
   // Validation using Yup. Very ez!
   const loginValidation = Yup.object({
     email: Yup.string()
-      .required("Enter your email dum dum!")
-      .email("Must be valid email address!"),
-    password: Yup.string().required("Password is required you dum dum!"),
+      .required("Enter your email")
+      .email("Must be a valid email address"),
+    password: Yup.string().required("Password is required"),
   });
 
   // handle submission

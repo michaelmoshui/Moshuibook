@@ -3,6 +3,7 @@ import Header from "../components/header/header";
 import CreatePost from "../components/home/CreatePost";
 import LeftHome from "../components/home/LeftHome";
 import RightHome from "../components/home/rightHome";
+import SendVerification from "../components/home/SendVerification";
 import Stories from "../components/home/Stories";
 import "../css/home.css";
 
@@ -14,6 +15,7 @@ export default function Home() {
       <LeftHome user={user} />
       <div className="home-middle">
         <Stories />
+        {!user.verified && <SendVerification user={user} />}
         <CreatePost user={user} />
       </div>
       <RightHome user={user} />

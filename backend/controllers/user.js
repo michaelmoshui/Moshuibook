@@ -116,10 +116,16 @@ exports.register = async (req, res) => {
 
 //activate function
 exports.activate = async (req, res) => {
-  token = req.body.token;
-
-  // use token of user to find its user information in database
+  const token = req.body.token; // this is token from url
   const user = jwt.verify(token, process.env.TOKEN_SECRET);
+  const validUser = req.user.id; // this is currently logged in user
+  // if currently logged in user is trying to authorize some random token, that is not allowed!
+  if (validUser !== user.id) {
+    return res
+      .status(400)
+      .json({ message: "You're not authorized to validate this user" });
+  }
+  // use token of user to find its user information in database
   const check = await User.findById(user.id);
 
   // check if user is legit in the database
@@ -167,6 +173,29 @@ exports.login = async (req, res) => {
         }
       });
     }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+exports.sendVerification = async (req, res) => {
+  try {
+    const id = req.user.id;
+    const user = await User.findById(id);
+    if (user.verified === true) {
+      return res.status(400).json({
+        message: "This account has already been verified.",
+      });
+    }
+    const emailVerificationToken = generateToken(
+      { id: user._id.toString() },
+      "30m"
+    );
+    const url = `${process.env.BASE_URL}/activate/${emailVerificationToken}`;
+    sendVerificationEmail(user.email, user.firstName, url);
+    return res.status(200).json({
+      message: "Email verification link has been sent to your email",
+    });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

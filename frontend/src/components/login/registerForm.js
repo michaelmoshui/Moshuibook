@@ -48,21 +48,15 @@ export default function RegisterForm(props) {
   // Registration Validation
   const registerValidation = Yup.object({
     firstName: Yup.string()
-      .required("You don't have a name? Just put 'dum dum'!!")
-      .matches(
-        /^[aA-zZ]+$/,
-        "Don't try to be cool with me with your fancy names!"
-      ),
+      .required("First name is required")
+      .matches(/^[aA-zZ]+$/, "Invalid"),
     lastName: Yup.string()
-      .required("You must be a DiSaPpOiNtMeNt to your family haiyaa")
-      .matches(
-        /^[aA-zZ]+$/,
-        "Don't try to be cool with me with your fancy names!"
-      ),
-    email: Yup.string().required("EMAILL!!!!").email("type carefully dum dum!"),
-    password: Yup.string().required(
-      "I'm gonna steal your account first if you leave this blank!"
-    ),
+      .required("Last naem is required")
+      .matches(/^[aA-zZ]+$/, "Invalid"),
+    email: Yup.string()
+      .required("Email is required")
+      .email("Invalid email syntax"),
+    password: Yup.string().required("Password is required"),
     gender: Yup.string().required("Be proud to express your gender!"),
   });
 
@@ -90,7 +84,7 @@ export default function RegisterForm(props) {
           bDay: user.bDay,
           gender: user.gender,
         }
-      ); // get the data from the backend post request
+      ); // send the data TO the backend post request, and then get the response BACK from the post result
       setError("");
       setSuccess(data.message);
       const { message, ...rest } = data; // "rest" includes all fields other than message from the post action (eg. firstname, lastName, email, etc.)

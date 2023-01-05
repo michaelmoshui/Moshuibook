@@ -546,6 +546,21 @@ header {
   }
 }
 
+@media (max-width: 400px) {
+  .middle-icon {
+    width: 50px;
+  }
+  .search1 {
+    width: 35px;
+    height: 35px;
+  }
+
+  .circle-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
 /* active header */
 
 .active-header svg {
