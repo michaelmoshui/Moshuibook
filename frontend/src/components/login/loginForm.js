@@ -59,9 +59,9 @@ export default function LoginForm(props) {
   return (
     <div className="login">
       <div className="login-title">
-        <img src="../../icons/facebook.svg" />
+        <img src="../../icons/moshuibook.svg" />
         <span>
-          Facebook helps you connect and share with the people in your life
+          Moshuibook helps you connect and share with the people in your life
         </span>
       </div>
       <div className="login-wrapper">
@@ -100,7 +100,7 @@ export default function LoginForm(props) {
             )}
           </Formik>
           {/* the link tag redirect to new webpages but DOES NOT refresh the state! (a tag does) */}
-          <Link to="/forgot" className="forgot-password">
+          <Link to="/reset" className="forgot-password">
             Forgotten password?
           </Link>
           <div className="login-line-splitter"></div>

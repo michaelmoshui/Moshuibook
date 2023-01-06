@@ -1,0 +1,90 @@
+.reset {
+  background: var(--bg-secondary);
+  height: 100vh;
+  color: var(--color-primary);
+}
+
+.reset-header {
+  background: var(--bg-primary);
+  box-shadow: 1px 8px 15px var(--shadow-1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  margin-bottom: 50px;
+}
+
+.reset-header img {
+  width: 200px;
+}
+
+.right-reset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.right-reset img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.right-reset button {
+  height: 40px;
+  padding: 0 10px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+/* reset-wrap */
+
+.reset-wrap {
+  height: 67vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reset-form {
+  background: var(--bg-primary);
+  box-shadow: 0 1px 2px var(--shadow-1);
+  border-radius: 10px;
+  width: 450px;
+  position: relative;
+  height: 280px;
+}
+
+.reset-form-header {
+  padding: 15px;
+  font-weight: 600;
+  font-size: 24px;
+  border-bottom: 1px solid var(--bg-third);
+}
+
+.reset-form-text {
+  padding: 15px;
+  font-size: 17px;
+}
+
+.reset-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid var(--bg-third);
+}
+
+.reset-form-btns {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+  padding: 10px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.reset-form-btns button {
+  width: 90px;
+}

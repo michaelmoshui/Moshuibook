@@ -10,7 +10,7 @@ export default function LoginFooter() {
       </div>
       <div className="footer-line-splitter"></div>
       <div className="login-footer-wrap">
-        <Link to="/">Facebook @ 2022</Link>
+        <Link to="/">Moshuibook @ 2023</Link>
       </div>
     </footer>
   );

@@ -33,7 +33,7 @@ export default function MainUserMenu(props) {
         </div>
         <div className="mmenu-col">
           <div className="mmenu-span1">Give feedback</div>
-          <div className="mmenu-span2">Help us improve Facebook</div>
+          <div className="mmenu-span2">Help us improve Moshuibook</div>
         </div>
       </div>
       <div className="mmenu-splitter"></div>
