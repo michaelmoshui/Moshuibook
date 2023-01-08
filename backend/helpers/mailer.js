@@ -16,6 +16,7 @@ const auth = new OAuth2(
 
 //send verification email to newly registered user
 exports.sendVerificationEmail = (email, name, url) => {
+  console.log(email);
   auth.setCredentials({
     refresh_token: MAILING_REFRESH,
   });

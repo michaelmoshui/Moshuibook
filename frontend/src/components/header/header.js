@@ -52,15 +52,17 @@ export default function Header({ user }) {
             <Logo />
           </div>
         </Link>
-        <div className="search search1">
+        <div
+          className="search search1"
+          onClick={() => {
+            setSearch(true);
+          }}
+        >
           <Search color={color} />
           <input
             type="text"
             placeholder="Search Moshuibook"
             className="hide-input"
-            onClick={() => {
-              setSearch(true);
-            }}
           ></input>
         </div>
       </div>

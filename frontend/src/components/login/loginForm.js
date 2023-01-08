@@ -38,6 +38,7 @@ export default function LoginForm(props) {
   const dispatch = useDispatch();
 
   const loginSubmit = async () => {
+    console.log(process.env.REACT_APP_BACKEND_URL);
     try {
       setLoading(true);
       const { data } = await axios.post(
@@ -112,6 +113,10 @@ export default function LoginForm(props) {
           >
             Create Account
           </button>
+          <Link to="/" className="create-page-link">
+            <b>Create a Page </b>
+            for a celebrity, brand, or business
+          </Link>
           <HashLoader // This is the loading thingy!
             color="#1876f2"
             loading={loading}
@@ -121,10 +126,6 @@ export default function LoginForm(props) {
           />
           {error && <div className="error-text">{error}</div>}
         </div>
-        <Link to="/" className="create-page-link">
-          <b>Create a Page </b>
-          for a celebrity, brand, or business
-        </Link>
       </div>
     </div>
   );

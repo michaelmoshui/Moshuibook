@@ -12,7 +12,6 @@ const jwt = require("jsonwebtoken");
 
 exports.register = async (req, res) => {
   // try saving new user, catch error and return error message
-
   try {
     const {
       firstName,
@@ -95,8 +94,8 @@ exports.register = async (req, res) => {
 
     // send email verification to newly registered user
     const url = `${process.env.BASE_URL}/activate/${emailVerificationToken}`;
+    console.log(url);
     sendVerificationEmail(user.email, user.firstName, url);
-
     const token = generateToken({ id: user._id.toString() }, "7d");
 
     res.send({
@@ -110,6 +109,8 @@ exports.register = async (req, res) => {
         "Register Success! Activate your email to start using MoshuiBook!",
     });
   } catch (error) {
+    console.log("reached here");
+    console.log(error);
     res.status(500).json({ message: error.message });
   }
 };
