@@ -46,7 +46,47 @@ exports.sendVerificationEmail = (email, name, url) => {
     </head>
     <body>
         <h1>Hello ${name}</h1>
-        <a href="${url}">click here</a>
+        <a href="${url}">Activate your account here</a>
+    </body>
+    </html>`,
+  };
+  stmp.sendMail(mailOptions, (err, res) => {
+    if (err) return err;
+    return res;
+  });
+};
+
+exports.sendResetCode = (email, name, code) => {
+  auth.setCredentials({
+    refresh_token: MAILING_REFRESH,
+  });
+  const accessToken = auth.getAccessToken();
+  const stmp = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      type: "OAuth2",
+      user: EMAIL,
+      clientId: MAILING_ID,
+      clientSecret: MAILING_SECRET,
+      refreshToken: MAILING_REFRESH,
+      accessToken,
+    },
+  });
+  const mailOptions = {
+    from: EMAIL,
+    to: email,
+    subject: "Reset Moshuibook password",
+    html: `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Hello ${name}</h1>
+        <a>Here is your reset password code: ${code}</a>
     </body>
     </html>`,
   };

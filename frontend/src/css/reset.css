@@ -4,6 +4,8 @@
   color: var(--color-primary);
 }
 
+/* reset header */
+
 .reset-header {
   background: var(--bg-primary);
   box-shadow: 1px 8px 15px var(--shadow-1);
@@ -45,15 +47,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 10px;
 }
+
+/* first reset form */
 
 .reset-form {
   background: var(--bg-primary);
   box-shadow: 0 1px 2px var(--shadow-1);
   border-radius: 10px;
-  width: 450px;
+  width: 100%;
   position: relative;
-  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: fit-content;
 }
 
 .reset-form-header {
@@ -72,7 +80,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom: 1px solid var(--bg-third);
 }
 
 .reset-form-btns {
@@ -80,11 +87,95 @@
   gap: 10px;
   margin-top: 5px;
   padding: 10px;
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
+  position: relative;
+  right: 0px;
+  bottom: 5px;
+  align-self: flex-end;
 }
 
 .reset-form-btns button {
   width: 90px;
+}
+
+.reset-form .input-error-message {
+  position: relative;
+  top: 0;
+  z-index: 99;
+}
+
+/* second reset form */
+.reset-form.dynamic-height {
+  height: 420px;
+  justify-content: flex-start;
+  height: fit-content;
+}
+
+.reset-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  font-size: 15px;
+  color: var(--color-secondary);
+}
+
+.reset-left {
+  padding: 15px;
+}
+
+.reset-grid label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.reset-left input {
+  width: 20px;
+  height: 20px;
+}
+
+.label-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.reset-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  gap: 5px;
+}
+
+.reset-right img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* responsive */
+@media (max-width: 350px) {
+  .reset-form form .input-wrap {
+    width: 90% !important;
+  }
+  .reset-header img {
+    display: none;
+  }
+  .reset-header {
+    padding: 5px 1rem;
+  }
+  .reset-form-btns {
+    bottom: 5px;
+  }
+}
+
+@media (min-width: 650px) {
+  .reset-form {
+    width: 500px;
+  }
+  .reset-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

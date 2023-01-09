@@ -4,6 +4,11 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import LoginInputs from "../components/inputs/loginInputs";
+import LoginFooter from "../components/login/loginFooter";
+import ChangePassword from "../components/reset/ChangePassword";
+import CodeVerification from "../components/reset/CodeVerification";
+import SearchAccount from "../components/reset/SearchAccount";
+import SendEmail from "../components/reset/SendEmail";
 import "../css/reset.css";
 
 export default function Reset() {
@@ -20,8 +25,20 @@ export default function Reset() {
       navigate("/");
     }
   };
+  const [visible, setVisible] = useState(0); // 0 for first card, 1 for second, 2 for third, 3 for fourth
+  const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [code, setCode] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [userInfo, setUserInfo] = useState({
+    email: "",
+    picture: "",
+    firstName: "",
+    lastName: "",
+  });
+
   return (
     <div className="reset">
       <div className="reset-header">
@@ -49,36 +66,56 @@ export default function Reset() {
         )}
       </div>
       <div className="reset-wrap">
-        <div className="reset-form">
-          <div className="reset-form-header">Find your account</div>
-          <div className="reset-form-text">
-            Please enter your email address to search for your account
-          </div>
-          <Formik enableReinitialize initialValues={{ email: email }}>
-            {(formik) => (
-              <Form>
-                <LoginInputs
-                  name="email"
-                  type="text"
-                  placeholder="Email address"
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                />
-                {error && <div className="error-text">{error}</div>}
-                <div type="submit" className="reset-form-btns">
-                  <Link to="/login">
-                    <button className="gray-btn">Cancel</button>
-                  </Link>
-                  <button type="submit" className="blue-btn">
-                    Search
-                  </button>
-                </div>
-              </Form>
-            )}
-          </Formik>
-        </div>
+        {visible === 0 && (
+          <SearchAccount
+            email={email}
+            setEmail={setEmail}
+            userInfo={userInfo}
+            setUserInfo={setUserInfo}
+            loading={loading}
+            setLoading={setLoading}
+            setError={setError}
+            error={error}
+            setVisible={setVisible}
+          />
+        )}
+        {visible === 1 && (
+          <SendEmail
+            userInfo={userInfo}
+            loading={loading}
+            setLoading={setLoading}
+            setError={setError}
+            error={error}
+            setVisible={setVisible}
+          />
+        )}
+        {visible === 2 && (
+          <CodeVerification
+            userInfo={userInfo}
+            code={code}
+            setCode={setCode}
+            loading={loading}
+            setLoading={setLoading}
+            error={error}
+            setError={setError}
+            setVisible={setVisible}
+          />
+        )}
+        {visible === 3 && (
+          <ChangePassword
+            userInfo={userInfo}
+            password={password}
+            setPassword={setPassword}
+            confirmPassword={confirmPassword}
+            setConfirmPassword={setConfirmPassword}
+            error={error}
+            setError={setError}
+            loading={loading}
+            setLoading={setLoading}
+          />
+        )}
       </div>
+      <LoginFooter />
     </div>
   );
 }
