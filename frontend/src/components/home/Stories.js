@@ -25,7 +25,7 @@ export default function Stories() {
         <div className="create-story-text">Create Story</div>
       </div>
       {stories.slice(0, max).map((val, ind) => {
-        return <StoryItem story={val} />;
+        return <StoryItem story={val} key={ind} />;
       })}
       <div className="white-circle">
         <ArrowRight color="#65676b" />

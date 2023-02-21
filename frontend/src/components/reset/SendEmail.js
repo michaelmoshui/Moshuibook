@@ -1,13 +1,9 @@
-import { Form, Formik } from "formik";
 import { Link } from "react-router-dom";
-import LoginInputs from "../inputs/loginInputs";
-import * as Yup from "yup";
 import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
 
 export default function SendEmail({
   userInfo,
-  error,
   setError,
   loading,
   setLoading,
@@ -45,7 +41,7 @@ export default function SendEmail({
           </label>
         </div>
         <div className="reset-right">
-          <img src={userInfo.picture}></img>
+          <img src={userInfo.picture} alt=""></img>
           <span>{userInfo.email}</span>
           <span>
             {userInfo.firstName} {userInfo.lastName}

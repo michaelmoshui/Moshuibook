@@ -102,6 +102,7 @@ exports.register = async (req, res) => {
 
     res.send({
       id: user._id,
+      username: user.username,
       firstName: user.firstName,
       lastName: user.lastName,
       picture: user.picture,
@@ -162,6 +163,7 @@ exports.login = async (req, res) => {
             const token = generateToken({ id: user._id.toString() }, "7d");
             res.send({
               id: user._id,
+              username: user.username,
               firstName: user.firstName,
               lastName: user.lastName,
               picture: user.picture,

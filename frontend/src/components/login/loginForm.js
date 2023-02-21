@@ -60,7 +60,7 @@ export default function LoginForm(props) {
   return (
     <div className="login">
       <div className="login-title">
-        <img src="../../icons/moshuibook.svg" />
+        <img src="../../icons/moshuibook.svg" alt="" />
         <span>
           Moshuibook helps you connect and share with the people in your life
         </span>

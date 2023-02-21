@@ -8,7 +8,6 @@ import ClipLoader from "react-spinners/ClipLoader";
 export default function SearchAccount({
   email,
   setEmail,
-  userInfo,
   setUserInfo,
   loading,
   setLoading,
